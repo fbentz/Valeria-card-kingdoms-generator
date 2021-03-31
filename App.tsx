@@ -1,13 +1,7 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState, useReducer } from "react";
+import React, { useState } from "react";
 import AppLoading from "expo-app-loading";
-import {
-  StyleSheet,
-  View,
-  SafeAreaView,
-  ScrollView,
-  FlatList,
-} from "react-native";
+import { StyleSheet, View, SafeAreaView, ScrollView } from "react-native";
 import {
   citizens as citizenDeck,
   drawCitizenCards,
@@ -19,7 +13,6 @@ import {
   EBGaramond_800ExtraBold,
   EBGaramond_400Regular,
   EBGaramond_400Regular_Italic,
-  EBGaramond_800ExtraBold_Italic,
 } from "@expo-google-fonts/eb-garamond";
 import {
   Header,
@@ -27,6 +20,7 @@ import {
   MonsterItem,
   SectionHead,
   Button,
+  Icon,
 } from "./components";
 
 export default function App() {
@@ -50,7 +44,12 @@ export default function App() {
             <View style={styles.groupButton}>
               <View style={styles.button}>
                 <Button
-                  type="all"
+                  icon={
+                    <>
+                      <Icon type="monster" />
+                      <Icon type="citizen" />
+                    </>
+                  }
                   onPress={() => {
                     setMonsters(drawMonsterCards(monsterDeck));
                     setCitizens(drawCitizenCards(citizenDeck));
@@ -59,7 +58,7 @@ export default function App() {
               </View>
               <View style={styles.button}>
                 <Button
-                  type="monster"
+                  icon={<Icon type="monster" />}
                   onPress={() => {
                     setMonsters(drawMonsterCards(monsterDeck));
                   }}
@@ -67,7 +66,7 @@ export default function App() {
               </View>
               <View style={styles.button}>
                 <Button
-                  type="citizen"
+                  icon={<Icon type="citizen" />}
                   onPress={() => {
                     setCitizens(drawCitizenCards(citizenDeck));
                   }}

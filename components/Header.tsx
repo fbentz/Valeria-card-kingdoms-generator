@@ -14,12 +14,15 @@ const Header: React.FC<{}> = () => {
 const styles = StyleSheet.create({
   container: {
     display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    borderBottomWidth: 2,
+    borderBottomColor: "#e3e3e3",
   },
   header: {
     alignContent: "center",
     padding: 10,
-    borderBottomWidth: 2,
-    borderBottomColor: "#e3e3e3",
+    flex: 1,
   },
   title: {
     fontSize: 24,

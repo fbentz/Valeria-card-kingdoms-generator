@@ -1,31 +1,15 @@
-import React from "react";
-import {
-  StyleSheet,
-  View,
-  TouchableHighlight,
-  TouchableNativeFeedback,
-} from "react-native";
-import CitizenIcon from "./CitizenIcon";
-import MonsterIcon from "./MonsterIcon";
+import React, { ReactFragment } from "react";
+import { StyleSheet, View, TouchableHighlight } from "react-native";
 
 type ButtonProps = {
   onPress: () => void;
-  type: "all" | "citizen" | "monster";
+  icon: View | ReactFragment;
 };
 
-const Button: React.FC<ButtonProps> = ({ onPress, type }) => {
+const Button: React.FC<ButtonProps> = ({ onPress, icon }) => {
   return (
     <TouchableHighlight onPress={onPress}>
-      <View style={styles.button}>
-        {type === "citizen" && <CitizenIcon />}
-        {type === "monster" && <MonsterIcon />}
-        {type === "all" && (
-          <>
-            <MonsterIcon />
-            <CitizenIcon />
-          </>
-        )}
-      </View>
+      <View style={styles.button}>{icon}</View>
     </TouchableHighlight>
   );
 };
