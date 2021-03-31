@@ -1,18 +1,16 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import CitizenIcon from "./CitizenIcon";
-import MonsterIcon from "./MonsterIcon";
+import Icon from "./Icon";
 
 type SectionHeadProps = {
   title: string;
-  type: "monster" | "citizen" | "none";
+  type: "monster" | "citizen";
 };
 
 const SectionHead: React.FC<SectionHeadProps> = ({ title, type }) => {
   return (
     <View style={styles.container}>
-      {type === "monster" && <MonsterIcon />}
-      {type === "citizen" && <CitizenIcon />}
+      <Icon type={type} />
       <Text style={styles.title}>{title}</Text>
     </View>
   );

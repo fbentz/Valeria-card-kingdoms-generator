@@ -2,7 +2,7 @@ type ImagePath = {
   [keyof: string]: any;
 };
 
-export default {
+const imagePath: ImagePath = {
   antres: require("./antres.png"),
   bois: require("./bois.png"),
   catacombes: require("./catacombes.png"),
@@ -29,4 +29,8 @@ export default {
   shadow: require("./ombre.png"),
   holy: require("./saint.png"),
   soldier: require("./soldat.png"),
+  monster: require("./monstres.png"),
+  citizen: require("./citoyen.png"),
 };
+
+export default imagePath;
